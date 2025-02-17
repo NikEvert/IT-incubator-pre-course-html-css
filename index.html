@@ -15,15 +15,20 @@
 <section>
    <div class="card">
       <div class="product-images-block">
-         <img src="/assets/images/main-image.png" alt="">
-         <div class="preview-image selected">
-            <img src="assets/images/image-1.png" alt="">
+         <div class="main-image-wrapper">
+            <img src="/assets/images/main-image.png" alt="">
          </div>
-         <div class="preview-image">
-            <img src="assets/images/image-2.png" alt="">
+         <div class="preview-wrapper">
+            <div class="preview-image selected">
+               <img src="assets/images/image-1.png" alt="">
+            </div>
+            <div class="preview-image">
+               <img src="assets/images/image-2.png" alt="">
+            </div>
          </div>
       </div>
-      <div>
+
+      <div class="product-info-block">
          <h1>Fluted Contrast</h1>
          <span class="subtitle">Mug / 33 cl</span>
          <p class="text">
@@ -33,26 +38,26 @@
             history and traditions
          </p>
          <div class="colors">
-            <h2>Color options</h2>
-            <ul>
-               <li class="selected-element">
+            <h2 class="title">Color options</h2>
+            <ul class="color-options">
+               <li class="color-option selected-element">
                   <div class="circle blue"></div>
                </li>
-               <li>
+               <li class="color-option">
                   <div class="circle green"></div>
                </li>
-               <li>
+               <li class="color-option">
                   <div class="circle red"></div>
                </li>
-               <li>
+               <li class="color-option">
                   <div class="circle black"></div>
                </li>
-               <li>
+               <li class="color-option">
                   <div class="circle yellow"></div>
                </li>
             </ul>
          </div>
-         <div>
+         <div class="wrapper">
             <div>
                <h2>Quantity</h2>
                <select name="quantity" id="quantity" class="quantity">
