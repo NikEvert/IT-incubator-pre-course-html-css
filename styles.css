@@ -1,68 +1,76 @@
+/* =================== Общие стили =================== */
+
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
+body {
+   font-style: normal;
+   line-height: normal;
+   font-family: Rubik, sans-serif;
+}
+
+ul {
+   list-style: none;
+}
+
 section {
+   background: #eff2f9;
    height: 100vh;
-   background-color: #EFF2F9;
    display: flex;
-   align-items: center;
    justify-content: center;
+   align-items: center;
 }
 
 .card {
    width: 1170px;
    height: 800px;
-   background-color: #FFF;
-   box-shadow: 20px 20px 40px 0 rgba(81, 91, 117, 0.25);
-   padding-top: 60px;
-   padding-bottom: 70px;
+   background: #fff;
+   box-shadow: 20px 20px 40px 0px rgba(81, 91, 117, 0.25);
+   padding: 60px 0 70px;
    display: flex;
 }
 
-.preview-image {
+/* =================== Cтили для левой части =================== */
+
+.product-image-block {
+   border-right: 2px solid rgba(20, 20, 20, 0.15);
+   min-width: 540px;
+   display: flex;
+   flex-direction: column;
+}
+
+.main-image-wrapper {
+   flex-grow: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.previews-wrapper {
+   display: flex;
+   justify-content: center;
+   gap: 60px;
+}
+
+.preview {
    width: 80px;
    height: 80px;
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
-   transition: all .2s;
+   transition: 0.2s;
 }
 
-.preview-image:hover,
-.selected {
-   box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
+.preview:hover,
+.preview.selected {
+   box-shadow: 8px 8px 16px 0px rgba(81, 91, 117, 0.25);
 }
 
-.selected {
-   background: #FFF;
-
-}
-
-.product-images-block {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   min-width: 540px;
-   border-right: 2px solid rgba(20, 20, 20, 0.15);
-}
-
-.main-image-wrapper {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   flex-grow: 1;
-}
-
-.preview-wrapper {
-   display: flex;
-   justify-content: center;
-   gap: 60px;
-}
+/* =================== Cтили для правой части =================== */
 
 .product-info-block {
    padding: 0 60px;
@@ -70,52 +78,48 @@ section {
    flex-direction: column;
 }
 
-h1 {
-   font-family: "Montserrat", sans-serif;
-   font-weight: 700;
+.main-title {
+   color: #141414;
+   font-family: Montserrat;
    font-size: 38px;
-   letter-spacing: 0.01em;
-   color: rgba(20, 20, 20, 0.9);
+   font-weight: 700;
+   letter-spacing: 0.38px;
 }
 
 .subtitle {
-   margin-bottom: 60px;
-   font-family: "Lato", sans-serif;
-   font-weight: 400;
+   color: rgba(20, 20, 20, 0.40);
+   font-family: Lato;
    font-size: 16px;
-   letter-spacing: 0.01em;
-   color: rgba(20, 20, 20, 0.4);
+   font-weight: 400;
+   letter-spacing: 0.16px;
+   margin-bottom: 60px;
 }
 
 .text {
-   font-family: "Rubik", sans-serif;
-   font-weight: 400;
+   color: rgba(20, 20, 20, 0.70);
+
    font-size: 18px;
-   line-height: 1.66667;
-   letter-spacing: 0.01em;
-   color: rgba(20, 20, 20, 0.7);
+   font-weight: 400;
+   line-height: 30px; /* 166.667% */
+   letter-spacing: 0.18px;
    margin-bottom: 65px;
 }
 
-h2 {
-   font-family: "Lato", sans-serif;
-   font-weight: 400;
-   font-size: 16px;
-   letter-spacing: 0.01em;
-   text-transform: uppercase;
-   color: rgba(20, 20, 20, 0.4);
-   margin-bottom: 20px;
+.colors {
+   margin-bottom: 65px;
 }
 
 .title {
+   color: rgba(20, 20, 20, 0.40);
+   font-family: Lato;
+   font-size: 16px;
+   font-weight: 400;
+   letter-spacing: 0.16px;
+   text-transform: uppercase;
    margin-bottom: 20px;
 }
 
-ul {
-   list-style: none;
-}
-
-.color-options {
+.color-items {
    display: flex;
    align-items: center;
    gap: 40px;
@@ -124,20 +128,20 @@ ul {
 .circle {
    width: 16px;
    height: 16px;
-   border-radius: 100%;
    filter: drop-shadow(2px 2px 4px rgba(81, 91, 117, 0.25));
+   border-radius: 50%;
 }
 
 .blue {
-   background-color: #013c7d;
+   background-color: #013C7D;
 }
 
 .green {
-   background-color: #63cba7;
+   background-color: #63CBA7;
 }
 
 .red {
-   background-color: #d52f29;
+   background-color: #D52F29;
 }
 
 .black {
@@ -145,67 +149,36 @@ ul {
 }
 
 .yellow {
-   background-color: #f2c723;
+   background-color: #F2C723;
 }
 
-.color-option {
+.color-items > li {
    width: 30px;
    height: 30px;
    padding: 7px;
    border-radius: 50%;
    cursor: pointer;
-   transition: .2s;
-
+   transition: 0.2s;
 }
 
-.color-option.selected-element,
-.color-option:hover {
-   box-shadow: 2px 2px 6px 0 rgba(81, 91, 117, 0.25);
+.color-items > li:hover,
+.color-items > li.selected {
+   box-shadow: 2px 2px 6px 0px rgba(81, 91, 117, 0.25);
 }
-
 
 .wrapper {
    display: flex;
-   margin-bottom: 75px;
 }
 
 .wrapper > div {
    flex-grow: 1;
 }
 
-.price {
-   font-family: "Rubik", sans-serif;
-   font-weight: 500;
-   font-size: 20px;
-   letter-spacing: 0.01em;
-   text-transform: uppercase;
-   color: rgba(20, 20, 20, 0.8);
-}
-
-button {
-   font-family: "Rubik", sans-serif;
-   font-weight: 500;
-   font-size: 18px;
-   letter-spacing: 0.01em;
-   color: #fff;
-   width: 100%;
-   height: 70px;
-   background: #141414;
-   cursor: pointer;
-   transition: .2s;
-}
-
-button:hover {
-   transform: skew(10deg);
-}
-
 .quantity {
+   font-family: inherit;
    width: 80px;
-   font-family: "Rubik", sans-serif;
-   font-weight: 500;
    font-size: 20px;
-   letter-spacing: 0.01em;
-   text-transform: uppercase;
+   font-weight: 500;
    color: rgba(20, 20, 20, 0.8);
    border: none;
    appearance: none;
@@ -215,6 +188,27 @@ button:hover {
    cursor: pointer;
 }
 
-.colors {
-   margin-bottom: 65px;
+.price {
+   color: rgba(20, 20, 20, 0.80);
+   font-size: 20px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   text-transform: uppercase;
+}
+
+.btn {
+   height: 70px;
+   width: 100%;
+   background: #141414;
+   color: #FFF;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 0.18px;
+   margin-top: 75px;
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.btn:hover {
+   transform: translateY(-5px);
 }
